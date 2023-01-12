@@ -1,7 +1,9 @@
 /* Importing google font */
+
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
 /* Setting universal selector to apply this to all the content */
+
 * {
   box-sizing: border-box;
 }
@@ -19,7 +21,7 @@ body {
 /* Styling container and panels */
 
 .container {
-  display: flex;
+  display: flex;  /* This makes any children show up horizontally in a row*/
   width: 90vw;
 }
 
@@ -28,13 +30,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
-  border-radius: 50px;
+  border-radius: 50px;  /* This makes panel edges rounded */
   color: white;
   cursor: pointer;
-  flex: 0.5;
+  flex: 0.5;  /* This will make all the panels even */
   margin: 10px;
-  position: relative;
-  transition: flex 0.7s ease-in;
+  position: relative; 
+  transition: flex 0.7s ease-in;  
 }
 
 .panel h3 {
@@ -43,23 +45,25 @@ body {
   bottom: 20px;
   left: 20px;
   margin: 0;
-  opacity: 0;
+  opacity: 0;  /* This will make font invisible if its not the active panel*/
 }
 
 .panel.active {
-  flex: 5;
+  flex: 5;  /* This will make the active panel wider*/
 }
 
 .panel.active h3 {
-  opacity: 1;
+  opacity: 1;  /* This will make font visible on an active panel*/
 }
 
+/* This will make the site responsive so that if the screen is small it'll show 3 panels not 5*/
 @media (max-width:480px) {
   .container{
     width: 100vw;
   }
 
-  .panel:nth-of-type(4), .panel:nth-of-type(5) {
+  .panel:nth-of-type(4), 
+  .panel:nth-of-type(5) {
     display: none;
   }
 }
