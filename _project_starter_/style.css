@@ -22,7 +22,7 @@ body {
 
 .container {
   display: flex;  /* This makes any children show up horizontally in a row*/
-  width: 90vw;
+  width: 60vw;
 }
 
 .panel {
@@ -33,14 +33,16 @@ body {
   border-radius: 50px;  /* This makes panel edges rounded */
   color: white;
   cursor: pointer;
-  flex: 0.5;  /* This will make all the panels even */
-  margin: 10px;
+  flex: 0.3;  /* This will make all the panels even */
+  margin: 5px;
   position: relative; 
   transition: flex 0.7s ease-in;  
 }
 
 .panel h3 {
-  font-size: 24px;
+  background-color:#333333;
+  border-radius: 15px;
+  font-size: 20px;
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -49,15 +51,16 @@ body {
 }
 
 .panel.active {
-  flex: 5;  /* This will make the active panel wider*/
+  flex: 1;  /* This will make the active panel wider*/
 }
 
 .panel.active h3 {
   opacity: 1;  /* This will make font visible on an active panel*/
+  transition: opacity 0.3s ease-in 0.6s;
 }
 
 /* This will make the site responsive so that if the screen is small it'll show 3 panels not 5*/
-@media (max-width:480px) {
+@media (max-width:500px) {
   .container{
     width: 100vw;
   }
